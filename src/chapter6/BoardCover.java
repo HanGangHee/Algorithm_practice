@@ -100,8 +100,8 @@ public class BoardCover {
             int f_y = uncovered_y + coverType[a][0][1];
             int s_x = uncovered_x + coverType[a][1][0];
             int s_y = uncovered_y + coverType[a][1][1];
-            if(f_x >= 0 && f_x < H && f_y >= 0 && f_y < W && s_x >= 0 && s_x < H && s_y >= 0 && s_y < W &&
-                !is_covered[f_x][f_y] && !is_covered[s_x][s_y]){
+            boolean range = f_x >= 0 && f_x < H && f_y >= 0 && f_y < W && s_x >= 0 && s_x < H && s_y >= 0 && s_y < W;
+            if(range && !is_covered[f_x][f_y] && !is_covered[s_x][s_y]){
                  is_covered[uncovered_x][uncovered_y] = is_covered[f_x][f_y] = is_covered[s_x][s_y] = true;
                  ret += countCover(is_covered);
                  is_covered[uncovered_x][uncovered_y] = is_covered[f_x][f_y] = is_covered[s_x][s_y] = false;
