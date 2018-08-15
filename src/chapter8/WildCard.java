@@ -69,18 +69,15 @@ public class WildCard {
          */
         if(w_idx == w.length()) return w_idx == s.length();
         if(w.charAt(w_idx) == '*'){
+            while(w_idx + 1 < w.length() && w.charAt(w_idx + 1) == '*'){
+                ++w_idx;
+            }// 연속적인 *을 지운다.
+            if(w_idx == w.length() - 1) return true;
             for(int skip = s_idx; skip < s.length(); skip ++){
                 if(w_idx + 1 < w.length() && w.charAt(w_idx + 1) == s.charAt(skip) && match(w.substring(w_idx + 1), s.substring(skip))) return true;
             }
         }
-        boolean ret = true;
-        for(int i = w_idx + 1; i < w.length(); i ++){
-            if(w.charAt(w_idx) != '*'){
-                ret = false;
-                break;
-            }
-        }
-        return ret;
+        return false;
     }
 
 
