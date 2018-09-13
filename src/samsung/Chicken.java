@@ -5,7 +5,7 @@
 //{
 //    static ArrayList<Point> houses;
 //    static ArrayList<Point> chickens;
-//    static boolean choosed[];
+//    static boolean chose[];
 //    static int M;
 //    static int INF = 987654321;
 //    public static void main (String[] args)
@@ -37,7 +37,7 @@
 //                answer += houses.get(i).distance;
 //            }
 //        } else {
-//            choosed = new boolean[chickens.size()];
+//            chose = new boolean[chickens.size()];
 //            answer = findMinChikenDistance(0, 0);
 //        }
 //        System.out.println(answer);
@@ -47,8 +47,8 @@
 //        if(cnt == M){
 //            for(int i = 0; i < houses.size(); i ++){
 //                houses.get(i).distance = INF;
-//                for(int j = 0; j < choosed.length; j ++){
-//                    if(choosed[j]){
+//                for(int j = 0; j < chose.length; j ++){
+//                    if(chose[j]){
 //                        int d = Math.abs(chickens.get(j).x - houses.get(i).x) + Math.abs(chickens.get(j).y - houses.get(i).y);
 //                        houses.get(i).distance = Math.min(houses.get(i).distance, d);
 //                    }
@@ -59,14 +59,14 @@
 //                System.out.print(houses.get(i).distance +" ");
 //                sum += houses.get(i).distance;
 //            }
-//            System.out.println(Arrays.toString(choosed));
+//            System.out.println(Arrays.toString(chose));
 //            System.out.println();
 //            return sum;
 //        }
 //        if(step >= chickens.size()) return INF;
-//        choosed[step] = true;
+//        chose[step] = true;
 //        ret = Math.min(ret, findMinChikenDistance(step + 1, cnt + 1));
-//        choosed[step] = false;
+//        chose[step] = false;
 //        ret = Math.min(ret, findMinChikenDistance(step + 1, cnt));
 //        return ret;
 //    }
