@@ -52,6 +52,9 @@ public class PutOperator {
                 opCnt[i] += 1;
             }
         }
+        HashMap<String, String> a = new HashMap<>();
+        String sa = "";
+
     }
     public static int strToInteger(String s){
         String sub = s.substring(1);
